@@ -38,5 +38,13 @@ window.onload = function() {
             ComputerGuess.push(compGuess);
             console.log(ComputerGuess[0]);
         }
-    }
+        var html = "<p>Guess what letter I'm thinking of!</p>" +
+          "<p>Wins: " + wins + "</p>" +
+          "<p>Loses: " + loses + "</p>" +
+          "<p>Guesses left: " + guessesLeft + "</p>" +
+          "<p>Your guesses so far: " + UserGuess + "</p>";
+ 
+document.querySelector("#game").innerHTML = html;
+
 }
+    }
