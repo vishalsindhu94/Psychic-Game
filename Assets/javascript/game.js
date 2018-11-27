@@ -1,4 +1,4 @@
-var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var wins=0;
 var loses=0;
 var guesses=9;
@@ -8,35 +8,35 @@ var ComputerGuess= [];
 
 window.onload = function() {
 	var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-	computerGuess.push(compGuess);
-    console.log(computerGuess[0]);
+	ComputerGuess.push(compGuess);
+    console.log(ComputerGuess[0]);
     
     document.onkeyup = function(event) {
         var playerGuess = event.key;
         UserGuess.push(playerGuess);
-        console.log(computerGuess[0]);
+        console.log(UserGuess[0]);
         if ((playerGuess === computerGuess[0]) && (guessesLeft > 0)) {
             wins++;
             guessesLeft = 9;
-            lettersGuessed.length = 0;
-            computerGuess.length = 0;
+            UserGuess.length = 0;
+            ComputerGuess.length = 0;
             var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-            computerGuess.push(compGuess);
-            console.log(computerGuess[0]);
+            ComputerGuess.push(compGuess);
+            console.log(ComputerGuess[0]);
         }
         
-        else if ((playerGuess !== computerGuess[0]) && (guessesLeft > 0)) {
+        else if ((playerGuess !== ComputerGuess[0]) && (guessesLeft > 0)) {
             guessesLeft = guessesLeft-1;
         }
         
         else {
-            losses++;
+            loses++;
             guessesLeft = 9;
-            lettersGuessed.length = 0;
-            computerGuess.length = 0;
+            UserGuess.length = 0;
+            ComputerGuess.length = 0;
             var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-            computerGuess.push(compGuess);
-            console.log(computerGuess[0]);
+            ComputerGuess.push(compGuess);
+            console.log(ComputerGuess[0]);
         }
     }
 }
