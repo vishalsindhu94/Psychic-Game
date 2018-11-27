@@ -15,7 +15,7 @@ window.onload = function() {
         var playerGuess = event.key;
         UserGuess.push(playerGuess);
         console.log(UserGuess[0]);
-        if ((playerGuess === computerGuess[0]) && (guessesLeft > 0)) {
+        if ((playerGuess === ComputerGuess[0]) && (guessesLeft > 0)) {
             wins++;
             guessesLeft = 9;
             UserGuess.length = 0;
